@@ -1,0 +1,28 @@
+{
+    "version": 5,
+    "configurePresets": [
+        {
+            "name": "win9x-debug",
+            "generator": "Watcom WMake",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "environment": {
+                "PATH": "$env{WATCOM}\\binnt64${pathListSep}$env{WATCOM}\\binnt${pathListSep}$penv{PATH}",
+                "INCLUDE": "$env{WATCOM}\\h${pathListSep}$env{WATCOM}\\h\\nt"
+            },
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "wcl386",
+                "CMAKE_C_FLAGS_DEBUG": "-d2 -hd",
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_WATCOM_RUNTIME_LIBRARY": "SingleThreaded",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "CMAKE_EXE_LINKER_FLAGS_DEBUG": "debug dwarf all"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "win9x-debug",
+            "configurePreset": "win9x-debug"
+        }
+    ]
+}
