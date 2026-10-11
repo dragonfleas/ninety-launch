@@ -1,3 +1,4 @@
+#include <stddef.h>
 #include <windows.h>
 
 // NOLINTNEXTLINE(bugprone-easily-swappable-parameters,readability-non-const-parameter)

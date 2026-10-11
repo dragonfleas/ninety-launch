@@ -5,10 +5,8 @@ Checks: >
   cert-*,
   misc-*,
   readability-*,
-  portability-*,
-  -bugprone-easily-swappable-parameters,
-  -misc-include-cleaner,
-  -readability-identifier-length,
-  -readability-magic-numbers,
-  -readability-trivial-switch
+  portability-*
+CheckOptions:
+  - key: misc-include-cleaner.IgnoreHeaders
+    value: 'nt[/\\].*'
 WarningsAsErrors: '*'
